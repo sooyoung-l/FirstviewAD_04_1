@@ -640,7 +640,7 @@ body {
 }
 /* 라벨 박스 내부 여백 */
 .sca-ad-label {
-  padding: 0 3px 1px 3px;
+  padding: 1px 3px 1px 3px;
 }
 
 /* 우측 썸네일: absolute로 flex 레이아웃에서 분리, 우측 기준으로 좌측으로 등장 */
