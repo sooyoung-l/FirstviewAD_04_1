@@ -1,0 +1,831 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: #e8e8e8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* ─── 전체 컨테이너 (375×812 모바일 뷰) ─── */
+.phone-frame {
+  position: relative;
+  width: 375px;
+  height: 812px;
+  background: #fff;
+  overflow: hidden;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* ─── 배경 앱 화면 ─── */
+.bg-screen {
+  position: absolute;
+  inset: 0;
+  background: #fff;
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 상태바 */
+.bg-statusbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px 0;
+  height: 44px;
+  flex-shrink: 0;
+}
+.bg-time { font-size: 15px; font-weight: 600; letter-spacing: -0.3px; color: #000; }
+.bg-statusbar-right { display: flex; align-items: center; }
+
+/* 탑 네비 */
+.bg-topnav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 16px;
+  height: 44px;
+  flex-shrink: 0;
+}
+.bg-profile-row { display: flex; align-items: center; gap: 8px; }
+.bg-avatar-img { width: 32px; height: 32px; border-radius: 50%; object-fit: cover; }
+.bg-username { font-size: 16px; font-weight: 800; color: #000; letter-spacing: -0.3px; }
+.bg-topnav-icons { display: flex; gap: 13px; align-items: center; }
+
+/* ─── 상단 통합 가로 스크롤 ─── */
+.top-horizontal-container {
+  display: flex !important;
+  flex-wrap: nowrap;
+  gap: 9px;
+  overflow-x: auto;
+  overflow-y: visible;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 8px 16px 8px 16px;
+  background: #fff;
+  flex-shrink: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+.top-horizontal-container::-webkit-scrollbar { display: none; }
+
+/* 카드 공통 */
+.top-card {
+  flex: 0 0 auto;
+  background: #fff;
+  border: 1px solid #efefef;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 148px;
+}
+.top-card-services {
+  width: 326px;
+}
+
+.top-card-services .top-card-items {
+  padding: 0 8px 12px;
+  justify-content: flex-start;
+}
+.top-card-new {
+  width: 148px;
+  overflow: visible;
+}
+.top-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 12px 0 12px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #111;
+}
+.top-card-items {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0 0 12px 0;
+}
+.top-card-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 10px;
+  gap: 8px;
+  width: 62px;
+  min-width: 62px;
+  flex: 0 0 62px;
+  font-size: 11px;
+  color: #2a2a2a;
+  text-align: center;
+}
+.bg-service-icon {
+  width: 36px; height: 36px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* New 카드 아이템 */
+.birthday-user {
+  width: 62px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 10px;
+  gap: 6px;
+}
+.hat-overlay {
+  position: absolute !important;
+  top: -6px !important;
+  right: -2px !important;
+  width: 24px !important;
+  height: auto !important;
+  z-index: 999 !important;
+  pointer-events: none;
+}
+.new-label {
+  font-size: 11px;
+  color: #2a2a2a;
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* ─── 메인 뷰포트 (세로 스크롤) ─── */
+.main-scroll-viewport {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.main-scroll-viewport::-webkit-scrollbar { display: none; }
+
+/* 스크롤 콘텐츠 */
+.bg-content {
+  padding: 0 16px 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Friends card */
+.bg-friends-card {
+  border: 1px solid #efefef;
+  border-radius: 8px;
+  overflow: visible;
+}
+.bg-friends-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #000;
+}
+.bg-friends-divider { display: none; }
+.bg-friends-row {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 6px 16px 6px 13px;
+  justify-content: space-between;
+}
+.bg-friends-row:last-child {
+  padding-bottom: 12px;
+}
+.bg-avatars-group {
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 1px;
+  background: #fff;
+}
+.bg-avatars-group img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.bg-friends-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 3px;
+  width: 207px;
+  flex-shrink: 0;
+}
+.bg-friends-name { font-size: 15px; font-weight: 600; color: #111; }
+.bg-friends-sub { font-size: 13px; color: #888; }
+.bg-friends-count {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+  color: #616161;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* 피드 */
+.bg-feed-item { display: flex; flex-direction: column; gap: 0; margin-top: 12px; }
+.bg-feed-item + .bg-feed-item { margin-top: 20px; }
+.bg-feed-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0 8px;
+}
+.bg-feed-profile-row { display: flex; align-items: center; gap: 8px; }
+.bg-feed-avatar { width: 32px; height: 32px; border-radius: 50%; object-fit: cover; }
+.bg-feed-name { font-size: 14px; font-weight: 600; color: #111; }
+.bg-feed-name-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+.bg-feed-source {
+  font-size: 11px;
+  color: #888;
+  font-weight: 400;
+}
+.bg-add-btn {
+  background: none;
+  border: 1px solid #efefef;
+  border-radius: 14px;
+  padding: 4px 9px;
+  font-size: 12px;
+  color: #111;
+  cursor: pointer;
+}
+.bg-more-icon { width: 20px; height: 20px; display: block; flex-shrink: 0; }
+.bg-feed-card {
+  border-radius: 10px;
+  overflow: visible;
+  border: 1px solid #efefef;
+}
+.bg-unit-title {
+  padding: 8px 16px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #111;
+  background: linear-gradient(to bottom, #f2f2f2, #fff);
+  border-radius: 10px 10px 0 0;
+}
+.bg-feed-image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+}
+
+/* 피드 — 본문 텍스트 (Snow Man 카드) */
+.bg-feed-body {
+  padding: 12px 16px 14px;
+  background: #fff;
+  border-top: 1px solid #efefef;
+  border-radius: 0 0 10px 10px;
+}
+.bg-feed-desc {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.bg-feed-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+  font-size: 13px;
+  color: #888;
+}
+.bg-feed-meta-right { display: flex; align-items: center; gap: 4px; }
+
+/* 피드 — Hottest clips 섹션 */
+.bg-hottest-section { margin-top: 20px; }
+.bg-hottest-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 10px;
+}
+.bg-hottest-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+}
+.bg-hottest-item {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  aspect-ratio: 2 / 3;
+}
+.bg-hottest-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.bg-hottest-label {
+  position: absolute;
+  line-height: 1.3;
+  text-align: left;
+}
+
+/* UGG 첫 번째 아이템: 상단 좌측, #607E9F + 흰 아웃라인 1px, 14pt, Extra Bold */
+.bg-hottest-item:first-child .bg-hottest-label {
+  top: 12px;
+  left: 12px;
+  font-size: 14px;
+  font-weight: 800;
+  color: #607E9F;
+  -webkit-text-stroke: 1px #fff;
+  paint-order: stroke fill;
+  white-space: nowrap;
+  text-align: left;
+}
+
+/* 세 번째 아이템(강아지): 하단 좌측, 흰색, 17pt, Extra Bold */
+.bg-hottest-item:nth-child(3) .bg-hottest-label {
+  bottom: 10px;
+  left: 10px;
+  font-size: 17px;
+  font-weight: 800;
+  color: #fff;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+  text-align: left;
+}
+
+/* 탭바 */
+.bg-tabbar {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 84px;
+  background: #fff;
+  border-top: 1px solid rgba(0,0,0,0.08);
+  display: flex;
+  align-items: flex-start;
+  padding-top: 8px;
+  box-shadow: 0 -3px 5px rgba(0,0,0,0.05);
+  z-index: 10;
+}
+
+/* 탭바 공간 확보용 스페이서 */
+.tabbar-spacer {
+  flex-shrink: 0;
+  height: 84px;
+}
+.bg-tab {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  font-size: 9px;
+  color: #111;
+}
+.bg-tab-active { color: #111; font-weight: 600; }
+.bg-tab-icon {
+  width: 24px;
+  height: 24px;
+  display: block;
+  flex-shrink: 0;
+}
+
+
+
+
+
+/* ─── Friends list collapsed header right ─── */
+.bg-friends-header-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.bg-friends-avatars-collapsed {
+  display: flex;
+  align-items: center;
+}
+.bg-friends-avatars-collapsed img {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff;
+  margin-left: -8px;
+}
+.bg-friends-avatars-collapsed img:first-child {
+  margin-left: 0;
+}
+
+/* ─── Smart Channel AD ─── */
+
+.sca-wrapper {
+  position: relative;
+}
+
+
+.smart-channel-ad {
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  height: 48px;
+  /* border를 inset box-shadow로 대체 → 이미지가 상위 뎁스로 덮을 수 있음 */
+  box-shadow: inset 0 0 0 1px #efefef;
+  background: #fff;
+  overflow: hidden;
+  /* transition: height 0.3s cubic-bezier(0.4, 0, 0.2, 1); */ /* 축소 인터랙션 비활성 */
+  position: relative;
+}
+.smart-channel-ad.is-expanded {
+  height: 86px;
+  transition: height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 좌측 콘텐츠 래퍼 */
+.sca-left {
+  flex: 1;
+  min-width: 0;
+  position: relative;
+  align-self: stretch;
+}
+
+/* 브랜드 이미지: 단일 요소, 축소/확장 위치·크기 transition */
+.sca-brand-img {
+  position: absolute;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  z-index: 3;
+  /* 축소: 26×26, 세로 중앙 (48px 기준 → (48-26)/2 = 11px), left 12px */
+  width: 26px;
+  height: 26px;
+  left: 12px;
+  top: 11px;
+  /* 축소 인터랙션 비활성
+  transition:
+    width 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+    height 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+    top 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+    left 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  */
+}
+/* 확장: 20×20, left 16px, top 11px */
+.is-expanded .sca-brand-img {
+  width: 20px;
+  height: 20px;
+  left: 16px;
+  top: 11px;
+  transition:
+    width 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    height 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    top 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── 축소 상태 레이어 ── */
+.sca-state-collapsed {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  /* 브랜드 이미지 left(12) + size(26) + gap(8) = 46px, 우측: 라벨(39px) + right(10px) + gap(6px) = 55px */
+  padding: 1px 55px 0 46px;
+  opacity: 1;
+  /* 축소 인터랙션 비활성: transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1); */
+}
+.is-expanded .sca-state-collapsed {
+  opacity: 0;
+  pointer-events: none;
+  /* 확장 시 목적지 상태 → 즉시 사라짐 */
+  transition: opacity 0s;
+}
+
+/* ── 확장 상태 레이어 ── */
+.sca-state-expanded {
+  position: absolute;
+  top: 0; bottom: 0; left: 0;
+  /* 이미지 최종 너비(129px) + 여백(11px) */
+  right: 140px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 6px;
+  padding: 17px 14px 0 16px;
+  opacity: 0;
+  /* 축소 복귀 시 즉시 사라짐 */
+  transition: opacity 0s;
+  pointer-events: none;
+  z-index: 2;
+}
+.is-expanded .sca-state-expanded {
+  opacity: 1;
+  pointer-events: auto;
+  /* 확장 시 0.3s fade in */
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 확장 상태 브랜드명: 이미지(20px) + gap(6px) = 26px 인덴트 */
+.sca-exp-brand-name {
+  font-size: 12px;
+  font-weight: 400;
+  color: #616161;
+  white-space: nowrap;
+  padding-left: 26px;
+  margin-top: -4px;
+}
+
+/* 타이틀: 축소/확장 동일 13px */
+.sca-exp-title {
+  font-family: 'Hiragino Sans', 'ヒラギノ角ゴシック', 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #111;
+  line-height: 1.45;
+  white-space: normal;
+  -webkit-font-smoothing: antialiased;
+  margin-top: 4px;
+}
+
+/* 축소 상태 텍스트 */
+.sca-text {
+  flex: 1;
+  min-width: 0;
+  font-family: 'Hiragino Sans', 'ヒラギノ角ゴシック', 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #111;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*
+  AD 라벨: 단일 요소, .smart-channel-ad 기준 absolute
+  축소: 세로 중앙, 우측 끝 (right: 10px)
+  확장: 이미지 우상단 (right: 6px, top: 6px)
+  right 기준이 동일하므로 top 만 transition
+*/
+.sca-ad-label {
+  position: absolute;
+  z-index: 10;
+  right: 10px;
+  /* 축소: 높이 48px 중앙 → top = (48 - 16) / 2 = 16px */
+  top: 16px;
+  width: 39px;
+  height: 16px;
+  background-color: rgba(255, 255, 255, 0.82);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1px;
+  color: #555;
+  pointer-events: none;
+  /* 축소 인터랙션 비활성
+  transition:
+    top 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+    right 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+    width 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+    height 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  */
+}
+/* 확장: 이미지 우상단 */
+.is-expanded .sca-ad-label {
+  top: 8px;
+  right: 8px;
+  width: 35px;
+  height: 14px;
+  transition:
+    top 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    right 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    width 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* 축소 상태 기본값 */
+.sca-ad-label svg {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+}
+.sca-ad-label span {
+  font-family: -apple-system, 'SF Pro Text', BlinkMacSystemFont, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0;
+}
+/* 확장 상태: 아이콘 14px, 텍스트 그대로 11px */
+.is-expanded .sca-ad-label svg {
+  width: 14px;
+  height: 14px;
+}
+.is-expanded .sca-ad-label span {
+  font-size: 11px;
+}
+/* 라벨 박스 내부 여백 */
+.sca-ad-label {
+  padding: 0 3px 1px 3px;
+}
+
+/* 우측 썸네일: absolute로 flex 레이아웃에서 분리, 우측 기준으로 좌측으로 등장 */
+.sca-thumb {
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  bottom: -1px;
+  width: 94px;
+  border-radius: 0 8px 8px 0;
+  z-index: 10;
+  opacity: 0;
+  /* 축소 인터랙션 비활성: transition: opacity 0s, width 0.2s cubic-bezier(0.4, 0, 0.2, 1); */
+}
+.is-expanded .sca-thumb {
+  width: 129px;
+  opacity: 1;
+  transition:
+    width 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sca-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 0 8px 8px 0;
+}
+
+.sca-thumb::after { display: none; }
+
+/* smart-channel-ad 바깥에 위치한 이미지 인라인 라인 */
+.sca-img-border {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 129px;
+  border-radius: 0 8px 8px 0;
+  border-top: 1px solid rgba(0,0,0,0.04);
+  border-right: 1px solid rgba(0,0,0,0.04);
+  border-bottom: 1px solid rgba(0,0,0,0.04);
+  pointer-events: none;
+  z-index: 20;
+  opacity: 0;
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.sca-img-border.is-visible {
+  opacity: 1;
+}
+
+/* ─── 피드 이미지 래퍼 공통 ─── */
+.bg-feed-image-wrap {
+  position: relative;
+  line-height: 0;
+  border-radius: 10px 10px 0 0;
+  overflow: hidden;
+  margin: -1px -1px 0 -1px; /* 카드 border 위로 올라오도록 */
+  z-index: 1;
+}
+
+/* 이미지 위에 올라오는 아웃라인 오버레이 (좌·우·상단만) */
+.bg-feed-image-wrap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-top: 1px solid rgba(0,0,0,0.04);
+  border-left: 1px solid rgba(0,0,0,0.04);
+  border-right: 1px solid rgba(0,0,0,0.04);
+  border-radius: 10px 10px 0 0;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* 뉴진스 메인 이미지: 3:4 세로 비율 */
+.bg-feed-image-wrap .bg-feed-image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  display: block;
+  border-radius: 0;
+}
+
+/* Snow Man 이미지: 16:9 비율 복원 */
+.bg-feed-image-wrap--sm .bg-feed-image {
+  aspect-ratio: 16 / 9;
+}
+
+.nj-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 14px 0 16px;
+  background: linear-gradient(to top, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0) 100%);
+}
+
+/* 썸네일+텍스트 묶음: 좌우 30px 여백 */
+.nj-overlay-inner {
+  padding: 0 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+/* 썸네일: 4:3 가로 비율, 흰 아웃라인 */
+.nj-thumb {
+  width: 80px;
+  height: 60px;
+  border-radius: 5px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.nj-caption {
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.4;
+  width: 100%;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-shadow: 0 1px 5px rgba(0,0,0,0.7);
+}
+
+/* 뉴진스 카드: 하단 모서리 각짐 */
+.bg-feed-card--nj {
+  border-radius: 10px 10px 0 0;
+}
+
+/* ─── 피드 바디 (뉴진스용 하단 메타) ─── */
+.bg-feed-body--nj {
+  border-radius: 0 0 10px 10px;
+  border: 1px solid #efefef;
+  border-top: none;
+  margin-top: 0;
+}
+.bg-feed-body--nj .bg-feed-meta {
+  margin-top: 0;
+}
+
+/* ─── 気になる 배지 ─── */
+.kininaru-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 20px;
+  padding: 7px 12px 7px 8px;
+}
+
+.kininaru-icon {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  display: block;
+  object-fit: contain;
+}
+
+.kininaru-count {
+  font-size: 13px;
+  font-weight: 500;
+  color: #444;
+  white-space: nowrap;
+}
+
+/* ─── Hottest clips More 버튼 ─── */
+.hottest-more-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 24px;
+  height: 24px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}

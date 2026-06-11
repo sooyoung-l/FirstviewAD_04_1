@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AD Popup</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="phone-frame" id="phoneFrame">
+
+  <!-- 배경 앱 화면 -->
+  <div class="bg-screen">
+
+    <!-- 상태바 -->
+    <div class="bg-statusbar">
+      <span class="bg-time">9:41</span>
+      <div class="bg-statusbar-right">
+        <svg xmlns="http://www.w3.org/2000/svg" width="67" height="12" viewBox="0 0 67 12" fill="none">
+          <rect opacity="0.35" x="42.8333" y="0.501953" width="21" height="10.3333" rx="2.16667" stroke="black"/>
+          <path opacity="0.4" d="M65.3333 3.66797V7.66797C66.138 7.32919 66.6613 6.5411 66.6613 5.66797C66.6613 4.79484 66.138 4.00675 65.3333 3.66797Z" fill="black"/>
+          <rect x="44.3333" y="2.00195" width="18" height="7.33333" rx="1.33333" fill="black"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M27.4482 8.42669C28.7289 7.34442 30.6051 7.34442 31.8857 8.42669C31.9501 8.4849 31.9875 8.56751 31.9893 8.65423C31.9909 8.74086 31.9564 8.82399 31.8945 8.8847L29.8897 10.9072C29.8309 10.9666 29.7506 10.9999 29.667 10.9999C29.5834 10.9999 29.5031 10.9666 29.4443 10.9072L27.4385 8.8847C27.3769 8.824 27.343 8.74065 27.3447 8.65423C27.3466 8.56755 27.3839 8.48485 27.4482 8.42669ZM24.7725 5.72942C27.5316 3.16504 31.8043 3.1651 34.5635 5.72942C34.6258 5.78956 34.6612 5.87238 34.6621 5.95892C34.6629 6.04526 34.6293 6.12811 34.5684 6.18938L33.4092 7.36028C33.2897 7.47959 33.0971 7.48144 32.9746 7.36517C32.0685 6.5454 30.8893 6.09165 29.667 6.09173C28.4456 6.09225 27.2677 6.5461 26.3623 7.36517C26.2398 7.48151 26.0462 7.47979 25.9268 7.36028L24.7686 6.18938C24.7075 6.12818 24.6731 6.04533 24.6738 5.95892C24.6747 5.87244 24.7103 5.78954 24.7725 5.72942ZM22.0967 3.03899C26.3285 -1.01307 33.0044 -1.01292 37.2363 3.03899C37.2976 3.09919 37.3325 3.18166 37.333 3.26751C37.3334 3.35327 37.2998 3.43615 37.2393 3.497L36.0791 4.66692C35.9595 4.78702 35.765 4.7881 35.6436 4.66985C34.0312 3.13845 31.8916 2.28421 29.667 2.28411C27.4421 2.28412 25.302 3.13822 23.6895 4.66985C23.5682 4.78822 23.3744 4.78703 23.2549 4.66692L22.0938 3.497C22.0333 3.43612 21.9995 3.35324 22 3.26751C22.0006 3.18166 22.0354 3.09915 22.0967 3.03899Z" fill="black"/>
+          <path d="M2 7.00293C2.55228 7.00293 3 7.45064 3 8.00293V10.0029C2.99982 10.5551 2.55218 11.0029 2 11.0029H1C0.447824 11.0029 0.000175969 10.5551 0 10.0029V8.00293C0 7.45064 0.447715 7.00293 1 7.00293H2ZM6.66699 5.00293C7.21913 5.00311 7.66699 5.45075 7.66699 6.00293V10.0029C7.66682 10.555 7.21902 11.0028 6.66699 11.0029H5.66699C5.11482 11.0029 4.66717 10.5551 4.66699 10.0029V6.00293C4.66699 5.45064 5.11471 5.00293 5.66699 5.00293H6.66699ZM11.333 2.66895C11.8852 2.66895 12.3328 3.11681 12.333 3.66895V10.0029C12.3328 10.5551 11.8852 11.0029 11.333 11.0029H10.333C9.78098 11.0028 9.33318 10.555 9.33301 10.0029V3.66895C9.33318 3.11692 9.78098 2.66912 10.333 2.66895H11.333ZM16 0.335938C16.5523 0.335937 17 0.783653 17 1.33594V10.0029C16.9998 10.5551 16.5522 11.0029 16 11.0029H15C14.4478 11.0029 14.0002 10.5551 14 10.0029V1.33594C14 0.783653 14.4477 0.335938 15 0.335938H16Z" fill="black"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- 탑 네비 -->
+    <div class="bg-topnav">
+      <div class="bg-profile-row">
+        <img src="assets/profile_naomi.png" class="bg-avatar-img">
+        <span class="bg-username">Naomi</span>
+      </div>
+      <div class="bg-topnav-icons">
+        <!-- LINE 아이콘 -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M14.603 1.92779C14.9319 1.80284 15.2556 2.12656 15.1499 2.46782L14.6997 3.99321C14.6259 4.20648 14.6333 4.60017 15.2065 4.6397L15.1909 4.64068C15.2839 4.65104 15.376 4.66104 15.4663 4.6729C20.308 5.18984 21.4236 7.7049 21.9409 9.54009C22.1005 10.3033 22.3328 11.1945 22.3325 12.7422V13.4483C22.3328 14.9964 22.1005 15.8881 21.9409 16.6514L21.8364 17.003C21.2698 18.7932 20.0052 21.033 15.4663 21.5176C14.4572 21.6641 12.6826 21.7002 12.1694 21.7002H11.8442L11.2544 21.6924C10.4914 21.6756 9.30338 21.6275 8.54639 21.5176C4.00774 21.033 2.74385 18.7932 2.17725 17.003L2.07178 16.6514C1.91219 15.8881 1.67985 14.9964 1.68018 13.4483V12.7422C1.67995 11.5813 1.81107 10.7898 1.94385 10.1446L2.07178 9.54009C2.44637 8.21132 3.13462 6.52612 5.32373 5.50103C5.85684 5.22723 6.46643 5.00501 6.83643 4.84087L14.0991 2.11529L14.603 1.92779ZM11.4155 6.17388C11.2687 6.17388 9.85714 6.19541 8.76514 6.33892L8.74463 6.34185L8.7251 6.3438C6.58572 6.57222 5.47828 7.21407 4.85889 7.81646C4.23426 8.42396 3.92788 9.15973 3.70068 9.95415C3.56122 10.6125 3.40637 11.2468 3.36865 12.2637L3.35986 12.7422V13.4493C3.35962 14.7568 3.5406 15.4808 3.70068 16.2364C3.92786 17.0309 4.23431 17.7665 4.85889 18.3741C5.43955 18.9388 6.44892 19.5389 8.33545 19.7999L8.7251 19.8477L8.75635 19.8506L8.7876 19.8555C9.66514 19.9829 11.3333 20.0196 11.8442 20.0196H12.1694C12.6807 20.0196 14.3477 19.9829 15.2251 19.8555L15.2563 19.8506L15.2886 19.8477C17.4278 19.6193 18.5344 18.9764 19.1538 18.3741C19.7789 17.7661 20.0838 17.0296 20.311 16.2344C20.471 15.4794 20.6531 14.7559 20.6528 13.4493V12.7422C20.6531 11.4345 20.4711 10.7107 20.311 9.95513C20.0838 9.16049 19.7786 8.4241 19.1538 7.81646C18.5344 7.21415 17.4276 6.57222 15.2886 6.3438L15.2681 6.34185L15.2476 6.33892C14.156 6.19549 12.7459 6.17389 12.5981 6.17388H11.4155ZM9.31006 11.2354C10.3857 11.2354 10.6187 12.2335 10.6187 13.2315C10.6186 14.2294 10.3857 15.2159 9.31006 15.2159C8.23446 15.2159 8.00149 14.2294 8.00147 13.2315C8.00147 12.2335 8.2344 11.2465 9.31006 11.2354ZM14.7104 11.2354C15.7861 11.2465 16.019 12.2335 16.019 13.2315C16.019 14.2294 15.7861 15.2159 14.7104 15.2159C13.635 15.2158 13.4019 14.2294 13.4019 13.2315C13.4019 12.2335 13.6349 11.2355 14.7104 11.2354Z" fill="black"/>
+        </svg>
+        <!-- QR/그리드 아이콘 -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <g opacity="0.01">
+            <rect width="24" height="24" fill="white"/>
+            <rect opacity="0.7" x="2" y="2" width="20" height="20" fill="white"/>
+          </g>
+          <circle cx="7.5918" cy="7.5918" r="3.0918" stroke="black" stroke-width="1.7" stroke-linejoin="round"/>
+          <circle cx="16.408" cy="7.5918" r="3.0918" stroke="black" stroke-width="1.7" stroke-linejoin="round"/>
+          <circle cx="7.5918" cy="16.4082" r="3.0918" stroke="black" stroke-width="1.7" stroke-linejoin="round"/>
+          <circle cx="16.408" cy="16.4082" r="3.0918" stroke="black" stroke-width="1.7" stroke-linejoin="round"/>
+        </svg>
+        <!-- 알림 아이콘 -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M5.15542 10.2188C5.22451 6.48818 8.26853 3.5 11.9998 3.5C15.7312 3.5 18.7752 6.48818 18.8443 10.2188L18.9317 14.9394C18.9502 15.9405 19.1922 16.9248 19.64 17.8203L19.9862 18.5127C20.066 18.6722 19.9499 18.86 19.7715 18.86H4.22817C4.04976 18.86 3.93372 18.6722 4.01351 18.5127L4.35971 17.8203C4.80747 16.9248 5.04946 15.9405 5.068 14.9394L5.15542 10.2188Z" stroke="black" stroke-width="1.7" stroke-linejoin="round"/>
+          <path d="M12 21.4997V18.8477" stroke="black" stroke-width="1.7" stroke-linejoin="round"/>
+        </svg>
+        <!-- 설정 아이콘 -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M9.98497 3.4578L9.17206 3.20943L9.17206 3.20943L9.98497 3.4578ZM9.44505 5.22492L9.87006 5.96104C10.0564 5.85343 10.1951 5.67912 10.258 5.47329L9.44505 5.22492ZM7.41286 6.39823L7.22117 7.22634C7.43097 7.2749 7.65137 7.24202 7.83786 7.13435L7.41286 6.39823ZM5.6107 5.98109L5.80239 5.15298V5.15298L5.6107 5.98109ZM4.51923 6.45533L3.7831 6.03035L3.7831 6.03035L4.51923 6.45533ZM3.45893 8.29195L4.19507 8.71693L4.19507 8.71693L3.45893 8.29195ZM3.59372 9.47409L4.2153 8.89432V8.89432L3.59372 9.47409ZM4.8553 10.8266H5.7053C5.7053 10.6114 5.62367 10.4042 5.47688 10.2469L4.8553 10.8266ZM4.8553 13.1804L5.47688 13.7602C5.62367 13.6028 5.7053 13.3957 5.7053 13.1804H4.8553ZM3.60072 14.5255L4.2223 15.1053H4.2223L3.60072 14.5255ZM3.46593 15.7076L4.20206 15.2826L4.20206 15.2826L3.46593 15.7076ZM4.52623 17.5442L5.26237 17.1193L5.26236 17.1193L4.52623 17.5442ZM5.6177 18.0185L5.80938 18.8466L5.80939 18.8466L5.6177 18.0185ZM7.41466 17.6025L7.83967 16.8664C7.65318 16.7588 7.43277 16.7259 7.22298 16.7744L7.41466 17.6025ZM9.44496 18.7748L10.2579 18.5264C10.195 18.3206 10.0563 18.1463 9.86996 18.0386L9.44496 18.7748ZM9.98497 20.5422L9.17206 20.7906L9.17206 20.7906L9.98497 20.5422ZM14.0183 20.5418L13.2053 20.2938V20.2938L14.0183 20.5418ZM14.558 18.7729L14.133 18.0368C13.9465 18.1445 13.8078 18.3189 13.745 18.5249L14.558 18.7729ZM16.5886 17.6005L16.78 16.7723C16.5703 16.7239 16.35 16.7568 16.1636 16.8644L16.5886 17.6005ZM18.3882 18.0163L18.1968 18.8445H18.1968L18.3882 18.0163ZM19.4793 17.542L18.7431 17.117L18.7431 17.117L19.4793 17.542ZM20.5396 15.7053L21.2757 16.1303L21.2757 16.1303L20.5396 15.7053ZM20.4045 14.5229L19.7832 15.1029V15.1029L20.4045 14.5229ZM19.1444 13.173H18.2944C18.2944 13.3883 18.3761 13.5956 18.5231 13.753L19.1444 13.173ZM19.1444 10.8341L18.5231 10.254C18.3761 10.4114 18.2944 10.6187 18.2944 10.8341H19.1444ZM20.4115 9.47668L21.0329 10.0567V10.0567L20.4115 9.47668ZM20.5466 8.29425L19.8104 8.71923V8.71923L20.5466 8.29425ZM19.4863 6.45763L18.7501 6.8826V6.8826L19.4863 6.45763ZM18.3952 5.98329L18.2038 5.15511H18.2038L18.3952 5.98329ZM16.5904 6.40029L16.1654 7.13641C16.3518 7.24402 16.5721 7.27692 16.7818 7.22847L16.5904 6.40029ZM14.5579 5.22677L13.7449 5.47482C13.8077 5.68078 13.9464 5.85522 14.1329 5.96289L14.5579 5.22677ZM14.0183 3.45818L13.2053 3.70623V3.70623L14.0183 3.45818ZM9.98497 3.4578L10.7979 3.70617C10.8171 3.64309 10.8754 3.6 10.9413 3.6V2.75V1.9C10.1278 1.9 9.40977 2.43143 9.17206 3.20943L9.98497 3.4578ZM9.44505 5.22492L10.258 5.47329L10.7979 3.70617L9.98497 3.4578L9.17206 3.20943L8.63215 4.97655L9.44505 5.22492ZM7.41286 6.39823L7.83786 7.13435L9.87006 5.96104L9.44505 5.22492L9.02005 4.4888L6.98785 5.66212L7.41286 6.39823ZM5.6107 5.98109L5.41902 6.80919L7.22117 7.22634L7.41286 6.39823L7.60454 5.57013L5.80239 5.15298L5.6107 5.98109ZM4.51923 6.45533L5.25537 6.88031C5.28835 6.82317 5.35477 6.79432 5.41902 6.80919L5.6107 5.98109L5.80239 5.15298C5.00957 4.96947 4.18996 5.3256 3.7831 6.03035L4.51923 6.45533ZM3.45893 8.29195L4.19507 8.71693L5.25537 6.88031L4.51923 6.45533L3.7831 6.03035L2.7228 7.86698L3.45893 8.29195ZM3.59372 9.47409L4.2153 8.89432C4.17028 8.84606 4.16208 8.77406 4.19507 8.71693L3.45893 8.29195L2.7228 7.86698C2.31608 8.57148 2.41728 9.45901 2.97214 10.0539L3.59372 9.47409ZM4.8553 10.8266L5.47688 10.2469L4.2153 8.89432L3.59372 9.47409L2.97214 10.0539L4.23372 11.4064L4.8553 10.8266ZM4.8553 13.1804H5.7053V10.8266H4.8553H4.0053V13.1804H4.8553ZM3.60072 14.5255L4.2223 15.1053L5.47688 13.7602L4.8553 13.1804L4.23372 12.6007L2.97914 13.9457L3.60072 14.5255ZM3.46593 15.7076L4.20206 15.2826C4.16908 15.2255 4.17728 15.1535 4.2223 15.1053L3.60072 14.5255L2.97914 13.9457C2.42428 14.5406 2.32308 15.4281 2.7298 16.1326L3.46593 15.7076ZM4.52623 17.5442L5.26236 17.1193L4.20206 15.2826L3.46593 15.7076L2.7298 16.1326L3.7901 17.9692L4.52623 17.5442ZM5.6177 18.0185L5.42602 17.1904C5.36177 17.2053 5.29535 17.1764 5.26237 17.1193L4.52623 17.5442L3.79009 17.9692C4.19696 18.674 5.01657 19.0301 5.80938 18.8466L5.6177 18.0185ZM7.41466 17.6025L7.22298 16.7744L5.42602 17.1904L5.6177 18.0185L5.80939 18.8466L7.60635 18.4307L7.41466 17.6025ZM9.44496 18.7748L9.86996 18.0386L7.83967 16.8664L7.41466 17.6025L6.98966 18.3387L9.01995 19.5109L9.44496 18.7748ZM9.98497 20.5422L10.7979 20.2938L10.2579 18.5264L9.44496 18.7748L8.63205 19.0231L9.17206 20.7906L9.98497 20.5422ZM10.9413 21.25V20.4C10.8754 20.4 10.8171 20.3569 10.7979 20.2938L9.98497 20.5422L9.17206 20.7906C9.40977 21.5686 10.1278 22.1 10.9413 22.1V21.25ZM13.0618 21.25V20.4H10.9413V21.25V22.1H13.0618V21.25ZM14.0183 20.5418L13.2053 20.2938C13.186 20.3569 13.1278 20.4 13.0618 20.4V21.25V22.1C13.8756 22.1 14.5938 21.5682 14.8313 20.7899L14.0183 20.5418ZM14.558 18.7729L13.745 18.5249L13.2053 20.2938L14.0183 20.5418L14.8313 20.7899L15.371 19.021L14.558 18.7729ZM16.5886 17.6005L16.1636 16.8644L14.133 18.0368L14.558 18.7729L14.983 19.509L17.0136 18.3366L16.5886 17.6005ZM18.3882 18.0163L18.5795 17.1881L16.78 16.7723L16.5886 17.6005L16.3973 18.4287L18.1968 18.8445L18.3882 18.0163ZM19.4793 17.542L18.7431 17.117C18.7102 17.1741 18.6438 17.2029 18.5795 17.1881L18.3882 18.0163L18.1968 18.8445C18.9895 19.0276 19.8087 18.6715 20.2154 17.9669L19.4793 17.542ZM20.5396 15.7053L19.8034 15.2804L18.7431 17.117L19.4793 17.542L20.2154 17.9669L21.2757 16.1303L20.5396 15.7053ZM20.4045 14.5229L19.7832 15.1029C19.8282 15.1512 19.8364 15.2232 19.8034 15.2804L20.5396 15.7053L21.2757 16.1303C21.6826 15.4256 21.5811 14.5377 21.0259 13.9429L20.4045 14.5229ZM19.1444 13.173L18.5231 13.753L19.7832 15.1029L20.4045 14.5229L21.0259 13.9429L19.7658 12.593L19.1444 13.173ZM19.1444 10.8341H18.2944V13.173H19.1444H19.9944V10.8341H19.1444ZM20.4115 9.47668L19.7902 8.89666L18.5231 10.254L19.1444 10.8341L19.7658 11.4141L21.0329 10.0567L20.4115 9.47668ZM20.5466 8.29425L19.8104 8.71923C19.8434 8.77638 19.8352 8.8484 19.7902 8.89666L20.4115 9.47668L21.0329 10.0567C21.5881 9.46186 21.6896 8.57401 21.2827 7.86927L20.5466 8.29425ZM19.4863 6.45763L18.7501 6.8826L19.8104 8.71923L20.5466 8.29425L21.2827 7.86927L20.2224 6.03265L19.4863 6.45763ZM18.3952 5.98329L18.5865 6.81148C18.6508 6.79663 18.7172 6.82549 18.7501 6.8826L19.4863 6.45763L20.2224 6.03265C19.8157 5.32813 18.9965 4.97198 18.2038 5.15511L18.3952 5.98329ZM16.5904 6.40029L16.7818 7.22847L18.5865 6.81148L18.3952 5.98329L18.2038 5.15511L16.3991 5.57211L16.5904 6.40029ZM14.5579 5.22677L14.1329 5.96289L16.1654 7.13641L16.5904 6.40029L17.0154 5.66417L14.9829 4.49065L14.5579 5.22677ZM14.0183 3.45818L13.2053 3.70623L13.7449 5.47482L14.5579 5.22677L15.3709 4.97872L14.8313 3.21013L14.0183 3.45818ZM13.0618 2.75V3.6C13.1278 3.6 13.186 3.64312 13.2053 3.70623L14.0183 3.45818L14.8313 3.21013C14.5938 2.43177 13.8756 1.9 13.0618 1.9V2.75ZM10.9413 2.75V3.6H13.0618V2.75V1.9H10.9413V2.75ZM14.5644 12.0001H13.7144C13.7144 12.9498 12.9446 13.7196 11.9951 13.7196V14.5696V15.4196C13.8836 15.4196 15.4144 13.8886 15.4144 12.0001H14.5644ZM11.9951 14.5696V13.7196C11.0456 13.7196 10.2759 12.9498 10.2759 12.0001H9.42585H8.57585C8.57585 13.8886 10.1067 15.4196 11.9951 15.4196V14.5696ZM9.42585 12.0001H10.2759C10.2759 11.0504 11.0456 10.2807 11.9951 10.2807V9.43066V8.58066C10.1067 8.58066 8.57585 10.1117 8.57585 12.0001H9.42585ZM11.9951 9.43066V10.2807C12.9446 10.2807 13.7144 11.0504 13.7144 12.0001H14.5644H15.4144C15.4144 10.1117 13.8836 8.58066 11.9951 8.58066V9.43066Z" fill="black"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- ─── 메인 세로 스크롤 뷰포트 ─── -->
+    <div class="main-scroll-viewport">
+
+    <!-- 상단 통합 가로 스크롤 -->
+    <div class="top-horizontal-container">
+
+      <!-- Recently used -->
+      <div class="top-card">
+        <div class="top-card-header">Recently used</div>
+        <div class="top-card-items">
+          <div class="top-card-item">
+            <img src="assets/app_lyppremium.png" class="bg-service-icon">
+            <span>LYP Premium</span>
+          </div>
+          <div class="top-card-item">
+            <img src="assets/app_linesukimani.png" class="bg-service-icon">
+            <span>LINE Sukimani</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Services -->
+      <div class="top-card top-card-services">
+        <div class="top-card-header">Services</div>
+        <div class="top-card-items">
+          <div class="top-card-item">
+            <img src="assets/service_icon_lineai.png" class="bg-service-icon">
+            <span>LINE AI</span>
+          </div>
+          <div class="top-card-item">
+            <img src="assets/service_icon_stickers.png" class="bg-service-icon">
+            <span>Stickers</span>
+          </div>
+          <div class="top-card-item">
+            <img src="assets/service_icon_themes.png" class="bg-service-icon">
+            <span>Themes</span>
+          </div>
+          <div class="top-card-item">
+            <img src="assets/service_icon_linegift.png" class="bg-service-icon">
+            <span>LINE Gift</span>
+          </div>
+          <div class="top-card-item">
+            <img src="assets/service_icon_voom.png" class="bg-service-icon">
+            <span>VOOM</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- New -->
+      <div class="top-card top-card-new">
+        <div class="top-card-header">
+          <span>New</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="8" height="14" viewBox="0 0 8 14" fill="none"><path d="M1.10039 11.6L5.90039 6.8L1.10039 2" stroke="#616161" stroke-width="1.1"/></svg>
+        </div>
+        <div class="top-card-items">
+          <div class="birthday-user">
+            <div class="photo-container" style="position:relative;width:42px;height:42px;margin:0 auto;">
+              <img src="assets/new_1.png" style="width:100%;height:100%;border-radius:50%;object-fit:cover;display:block;">
+              <svg class="hat-overlay" xmlns="http://www.w3.org/2000/svg" width="26" height="20" viewBox="0 0 26 20" fill="none">
+                <path d="M21.9468 5.65137L20.5337 17.9902C17.8398 13.5059 13.5807 10.0697 8.51123 8.4375L19.7827 3.99121L22.145 3.15234L21.9468 5.65137Z" fill="#457FF7"/>
+                <path d="M23.6401 1.20508L20.3197 5.53252" stroke="#EC65B9" stroke-width="1.18182" stroke-linecap="square"/>
+                <path d="M24.6831 3.01367L19.2753 3.72572" stroke="#EC65B9" stroke-width="1.18182" stroke-linecap="square"/>
+                <path d="M24.1436 5.0293L19.8162 1.70884" stroke="#EC65B9" stroke-width="1.18182" stroke-linecap="square"/>
+                <path d="M22.3354 6.07227L21.6235 0.664385" stroke="#EC65B9" stroke-width="1.18182" stroke-linecap="square"/>
+              </svg>
+            </div>
+            <span class="new-label">Friend's<br>birthday</span>
+          </div>
+          <div class="birthday-user">
+            <div class="photo-container" style="position:relative;width:42px;height:42px;margin:0 auto;">
+              <img src="assets/new_2.png" style="width:100%;height:100%;border-radius:50%;object-fit:cover;display:block;">
+            </div>
+            <span class="new-label">Profile<br>updated</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 스크롤 콘텐츠 영역 -->
+    <div class="bg-content">
+
+      <!-- Friends list 카드 -->
+      <div class="bg-friends-card">
+        <div class="bg-friends-header">
+          <span>Friends list</span>
+          <div class="bg-friends-header-right">
+            <div class="bg-friends-avatars-collapsed">
+              <img src="assets/friends_1.png">
+              <img src="assets/friends_2.png">
+              <img src="assets/friends_3.png">
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1.00004 3.75736L5.24268 8L9.48532 3.75736" stroke="#111111" stroke-width="1.3" stroke-linecap="square"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Smart Channel AD -->
+      <div class="sca-wrapper">
+      <div class="smart-channel-ad" id="smartChannelAd">
+
+        <!-- 좌측 콘텐츠 래퍼 -->
+        <div class="sca-left">
+
+          <!-- 브랜드 이미지: 단일 요소, 위치/크기 transition -->
+          <img src="assets/kose.png" class="sca-brand-img" alt="Kose">
+
+          <!-- 축소 상태 -->
+          <div class="sca-state-collapsed">
+            <span class="sca-text">内側からあふれる輝き新たな光のヴェール</span>
+          </div>
+
+          <!-- 확장 상태 -->
+          <div class="sca-state-expanded">
+            <span class="sca-exp-brand-name">Kose Japan</span>
+            <p class="sca-exp-title">内側からあふれる輝き新たな光のヴェール</p>
+          </div>
+
+        </div>
+
+        <!-- 우측 이미지 (확장 시 등장) -->
+        <div class="sca-thumb">
+          <img src="assets/img02.png" alt="">
+        </div>
+
+        <!-- AD 라벨: 단일 요소, 축소→확장 위치 transition -->
+        <div class="sca-ad-label">
+          <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 15 15" fill="none">
+            <path d="M2.125 7.5625C2.125 10.5607 4.56366 13 7.56187 13C10.5601 13 13 10.5607 13 7.5625C13 4.56429 10.5601 2.125 7.56187 2.125C4.56366 2.125 2.125 4.56429 2.125 7.5625" stroke="currentColor" stroke-width="1.03462" stroke-linecap="round" stroke-linejoin="round"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M6.60618 6.62451C6.60618 6.54232 6.67256 6.47656 6.75476 6.47656L7.91813 6.47783C8.17357 6.49237 8.37653 6.70544 8.37653 6.96404C8.37653 7.00261 8.37083 7.03802 8.36325 7.07279L7.94722 8.63943L7.59757 10.0607C7.59062 10.0866 7.58746 10.1144 7.58746 10.1435C7.58746 10.3028 7.69115 10.4388 7.8353 10.4855C7.87071 10.4976 7.90865 10.5039 7.94722 10.5039H8.17104C8.25387 10.5039 8.31962 10.5709 8.31962 10.6531C8.31962 10.7347 8.25387 10.7998 8.17104 10.7998H7.0083C6.75286 10.7846 6.55054 10.5715 6.55054 10.3129C6.55054 10.275 6.55496 10.2383 6.56381 10.2042L6.94697 8.63943L7.32949 7.21695C7.33518 7.19039 7.33897 7.16257 7.33897 7.13349C7.33897 6.97416 7.23528 6.83885 7.09113 6.79206C7.05509 6.77942 7.01841 6.7731 6.97858 6.7731H6.75476C6.67256 6.7731 6.60618 6.70671 6.60618 6.62451Z" fill="currentColor" stroke="currentColor" stroke-width="0.275898"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M7.49146 5.038C7.49146 4.69152 7.77218 4.41016 8.11866 4.41016C8.46515 4.41016 8.74651 4.69152 8.74651 5.038C8.74651 5.38511 8.46515 5.66584 8.11866 5.66584C7.77218 5.66584 7.49146 5.38511 7.49146 5.038Z" fill="currentColor"/>
+          </svg>
+          <span>AD</span>
+        </div>
+
+      </div>
+      <!-- smart-channel-ad 바깥에 위치 → overflow:hidden 클리핑 없음 -->
+      <div class="sca-img-border"></div>
+      </div>
+
+      <!-- 콘텐츠 피드 1 — Trendletter / NewJeans -->
+      <div class="bg-feed-item">
+        <div class="bg-feed-top">
+          <div class="bg-feed-profile-row">
+            <img src="assets/profile_trend.png" class="bg-feed-avatar">
+            <span class="bg-feed-name">Trendletter</span>
+            <button class="bg-add-btn">Add friend</button>
+          </div>
+          <svg class="bg-more-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <circle cx="10" cy="4" r="1.5" fill="#111"/>
+            <circle cx="10" cy="10" r="1.5" fill="#111"/>
+            <circle cx="10" cy="16" r="1.5" fill="#111"/>
+          </svg>
+        </div>
+        <div class="bg-feed-card bg-feed-card--nj">
+          <div class="bg-unit-title">NewJeans Comeback is trending</div>
+          <div class="bg-feed-image-wrap">
+            <img src="assets/feed_newjeans.png" class="bg-feed-image">
+            <div class="nj-overlay">
+              <div class="nj-overlay-inner">
+                <img src="assets/feed_newjeans2.png" class="nj-thumb" alt="">
+                <p class="nj-caption">ADORがNewJeansの最新状況を確認：ハニはADORと協力を継続、ダニエルは専属契約解除。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-feed-body bg-feed-body--nj">
+          <div class="bg-feed-meta">
+            <span>5分前</span>
+            <div class="bg-feed-meta-right">
+              <div class="kininaru-badge">
+                <img src="assets/emoji.png" class="kininaru-icon" alt="">
+                <span class="kininaru-count">9,876万</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 콘텐츠 피드 2 — Snow Man -->
+      <div class="bg-feed-item">
+        <div class="bg-feed-top">
+          <div class="bg-feed-profile-row">
+            <img src="assets/profile_snowman.png" class="bg-feed-avatar">
+            <div class="bg-feed-name-group">
+              <span class="bg-feed-name">Snow Man</span>
+              <span class="bg-feed-source">YouTube</span>
+            </div>
+          </div>
+          <svg class="bg-more-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <circle cx="10" cy="4" r="1.5" fill="#111"/>
+            <circle cx="10" cy="10" r="1.5" fill="#111"/>
+            <circle cx="10" cy="16" r="1.5" fill="#111"/>
+          </svg>
+        </div>
+        <div class="bg-feed-card bg-feed-card--sm">
+          <div class="bg-feed-image-wrap bg-feed-image-wrap--sm">
+            <img src="assets/feed_snowman.png" class="bg-feed-image">
+          </div>
+          <div class="bg-feed-body">
+            <p class="bg-feed-desc">Japanese pop group Snow Man released the stage-style "TRUE LOVE" music video from their 5th album, drawing praise for...</p>
+            <div class="bg-feed-meta">
+              <span>5 minutes ago</span>
+              <div class="bg-feed-meta-right">
+                <div class="kininaru-badge">
+                  <img src="assets/emoji.png" class="kininaru-icon" alt="">
+                  <span class="kininaru-count">1,238,891</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hottest clips 섹션 -->
+      <div class="bg-hottest-section">
+        <div class="bg-hottest-title">Hottest clip taking over right now</div>
+        <div class="bg-hottest-grid">
+          <div class="bg-hottest-item">
+            <img src="assets/feed_ugg.jpg">
+            <span class="bg-hottest-label">UGGのケア方法</span>
+            <button class="hottest-more-btn" aria-label="more">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none">
+                <circle cx="10" cy="4" r="1.5" fill="#fff"/>
+                <circle cx="10" cy="10" r="1.5" fill="#fff"/>
+                <circle cx="10" cy="16" r="1.5" fill="#fff"/>
+              </svg>
+            </button>
+          </div>
+          <div class="bg-hottest-item">
+            <img src="assets/feed_crosswalk.png">
+            <button class="hottest-more-btn" aria-label="more">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none">
+                <circle cx="10" cy="4" r="1.5" fill="#fff"/>
+                <circle cx="10" cy="10" r="1.5" fill="#fff"/>
+                <circle cx="10" cy="16" r="1.5" fill="#fff"/>
+              </svg>
+            </button>
+          </div>
+          <div class="bg-hottest-item">
+            <img src="assets/feed_dog.png">
+            <span class="bg-hottest-label">私より素敵な<br>子犬だなんて</span>
+            <button class="hottest-more-btn" aria-label="more">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none">
+                <circle cx="10" cy="4" r="1.5" fill="#fff"/>
+                <circle cx="10" cy="10" r="1.5" fill="#fff"/>
+                <circle cx="10" cy="16" r="1.5" fill="#fff"/>
+              </svg>
+            </button>
+          </div>
+          <div class="bg-hottest-item">
+            <img src="assets/feed_dessert.png">
+            <button class="hottest-more-btn" aria-label="more">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none">
+                <circle cx="10" cy="4" r="1.5" fill="#fff"/>
+                <circle cx="10" cy="10" r="1.5" fill="#fff"/>
+                <circle cx="10" cy="16" r="1.5" fill="#fff"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /bg-content -->
+
+    </div><!-- /main-scroll-viewport -->
+
+    <!-- 하단 탭바 -->
+    <div class="bg-tabbar">
+      <div class="bg-tab bg-tab-active">
+        <svg class="bg-tab-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M10.3174 3.67881C11.3195 2.94563 12.6815 2.94558 13.6836 3.67881L19.8828 8.21494C20.6162 8.75159 21.0497 9.60602 21.0498 10.5147V17.7003C21.0497 19.5503 19.5502 21.0498 17.7002 21.0499H12.7002V16.2501H11.2998V21.0499H6.30078C4.45069 21.0499 2.95128 19.5504 2.95117 17.7003V10.5147C2.95132 9.606 3.38477 8.75157 4.11816 8.21494L10.3174 3.67881Z" fill="currentColor"/>
+        </svg>
+        <span>Home</span>
+      </div>
+      <div class="bg-tab">
+        <svg class="bg-tab-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M11.9837 18.4265C17.2435 18.4265 20.75 14.7712 20.75 10.7594C20.75 6.74766 17.3737 3 11.9837 3C6.59371 3 3.25 6.94483 3.25 11.328C3.25 15.518 5.43684 18.3001 8.39903 20.5384C8.74361 20.7987 9.23683 20.634 9.37001 20.2231C9.71726 19.152 10.7151 18.4265 11.8411 18.4265H11.9837Z" stroke="currentColor" stroke-width="1.7"/>
+          <ellipse cx="12.0039" cy="10.8496" rx="0.5" ry="0.5" fill="currentColor" stroke="currentColor" stroke-width="1.2"/>
+          <ellipse cx="8.40234" cy="10.8496" rx="0.5" ry="0.5" fill="currentColor" stroke="currentColor" stroke-width="1.2"/>
+          <ellipse cx="15.6016" cy="10.8496" rx="0.5" ry="0.5" fill="currentColor" stroke="currentColor" stroke-width="1.2"/>
+        </svg>
+        <span>Chats</span>
+      </div>
+      <div class="bg-tab">
+        <svg class="bg-tab-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M18.4004 7.24902C18.4003 7.00065 18.1986 6.79893 17.9502 6.79883H6.0498C5.80143 6.79893 5.59971 7.00065 5.59961 7.24902V17.6494C5.59971 18.5606 6.3388 19.2988 7.25 19.2988H16.75C17.6612 19.2988 18.4003 18.5606 18.4004 17.6494V7.24902ZM20.0996 17.6494C20.0995 19.4995 18.6001 20.999 16.75 20.999H7.25C5.39991 20.999 3.9005 19.4995 3.90039 17.6494V7.24902C3.9005 6.06176 4.86255 5.09971 6.0498 5.09961H17.9502C19.1375 5.09972 20.0995 6.06177 20.0996 7.24902V17.6494Z" fill="currentColor"/>
+          <path d="M13.9004 5.09961C13.9004 4.05027 13.0493 3.19922 12 3.19922C10.9507 3.19922 10.0996 4.05027 10.0996 5.09961V6.34961H8.40039V5.09961C8.40039 3.11138 10.0118 1.5 12 1.5C13.9882 1.5 15.5996 3.11138 15.5996 5.09961V6.34961H13.9004V5.09961Z" fill="currentColor"/>
+        </svg>
+        <span>Shopping</span>
+      </div>
+      <div class="bg-tab">
+        <svg class="bg-tab-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="4.35156" y="3.34961" width="15.3" height="17.3" rx="2.5" stroke="currentColor" stroke-width="1.7"/>
+          <path d="M9 8.6543H15" stroke="currentColor" stroke-width="1.7"/>
+          <path d="M9 12H15" stroke="currentColor" stroke-width="1.7"/>
+          <path d="M9 15.3457H15" stroke="currentColor" stroke-width="1.7"/>
+        </svg>
+        <span>News</span>
+      </div>
+      <div class="bg-tab">
+        <svg class="bg-tab-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M15.5565 5.79863C16.4792 5.10018 17.6671 4.94568 18.7682 5.4036C20.0216 5.92504 20.7959 7.08801 20.7961 8.45136V15.9494L20.7948 15.9501C20.7909 17.9677 19.1862 19.6277 17.1963 19.6473C15.1783 19.6667 13.526 18.0221 13.5258 15.996V12.558L7.9618 6.97274C7.38825 6.39717 6.59577 6.20874 5.83989 6.46181L5.84057 6.4625L5.68832 6.51942L5.68763 6.51873C4.88785 6.85126 4.40328 7.5846 4.4031 8.45067V15.996C4.40333 17.362 5.52598 18.4722 6.8981 18.4396C8.23977 18.4075 9.27428 17.2774 9.27445 15.9583V11.2707C9.27471 11.1331 9.44109 11.0643 9.53848 11.1617L10.3676 11.9922C10.435 12.0598 10.4732 12.1519 10.4733 12.2473V15.9432C10.473 17.9639 8.86688 19.6276 6.87478 19.6473C4.85666 19.6669 3.20384 18.0222 3.20361 15.996V8.45067C3.2038 7.08731 3.97918 5.92433 5.23225 5.40291C6.48464 4.88205 7.84888 5.15421 8.80809 6.11685L14.5552 11.8866C14.6631 11.9951 14.7245 12.144 14.7246 12.2981V15.9583C14.7248 17.2776 15.7602 18.4075 17.1016 18.4396H17.2292C18.5422 18.4036 19.5964 17.3191 19.5966 15.996V8.45067C19.5965 7.58401 19.1115 6.85094 18.3107 6.51873C17.5103 6.18585 16.6494 6.35741 16.0373 6.97274L14.2651 8.74763C14.151 8.86195 13.9656 8.86202 13.8516 8.74763L13.4147 8.3094C13.3014 8.19541 13.3012 8.01106 13.4147 7.89722L15.1917 6.11753L15.3755 5.94608L15.3761 5.94539L15.5565 5.79863Z" fill="currentColor" stroke="currentColor" stroke-width="0.253738"/>
+        </svg>
+        <span>MINI</span>
+      </div>
+    </div>
+
+
+</div><!-- /bg-screen -->
+
+</div><!-- /phone-frame -->
+
+<script src="script.js"></script>
+</body>
+</html>
